@@ -169,9 +169,33 @@ To run all tests at once;
 php artisan --filter=ApiEndpointsTest
 ```
 
+Should Return:
+```bash
+ PASS  Tests\Feature\ApiEndpointsTest
+  ✓ can create post                                                                                                                                                                                  0.21s  
+  ✓ can get all post                                                                                                                                                                                 0.13s  
+  ✓ can create user                                                                                                                                                                                  0.13s  
+  ✓ can get all user                                                                                                                                                                                 0.07s  
+  ✓ can call weather                                                                                                                                                                                 0.12s  
+
+  Tests:    5 passed (180 assertions)
+  Duration: 0.69s
+
+```
+
 To run test by name `e.g`:
 ```bash
 php artisan test --filter=ApiEndpointsTest::test_can_get_all_post
+```
+
+Should Return:
+```bash
+   PASS  Tests\Feature\ApiEndpointsTest
+  ✓ can get all post                                                                                                                                                                                 0.36s  
+
+  Tests:    1 passed (78 assertions)
+  Duration: 0.49s
+
 ```
 
 ## ADDITIONAL SETTING
