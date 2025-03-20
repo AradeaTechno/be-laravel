@@ -2,29 +2,48 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
-use App\Jobs\SendWelcomeEmail;
 use Illuminate\Console\Command;
+use App\Jobs\SendWelcomeEmail;
+use App\Models\User;
 
 class SendWelcomeEmailCommand extends Command
 {
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
     protected $signature = 'email:send-welcome {userId}';
 
-    protected $description = 'Send a welcome email to a specific user';
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Send a welcome email to the specified user by ID';
 
+    /**
+     * Execute the console command.
+     *
+     * @return int
+     */
     public function handle()
     {
-        $user = User::find($this->argument('userId'));
+        // Retrieve the user ID from the command argument
+        $userId = $this->argument('userId');
+
+        // Find the user by ID
+        $user = User::find($userId);
 
         if (!$user) {
-            $this->error('User not found.');
-            return 1;
+            $this->error("User with ID $userId not found.");
+            return Command::FAILURE;
         }
 
-        \Log::info("Dispatching SendWelcomeEmail job for user: " . $user->email);
+        // Dispatch the SendWelcomeEmailJob
         SendWelcomeEmail::dispatch($user);
 
-        $this->info('Welcome email dispatched for user: ' . $user->email);
-        return 0;
+        $this->info("Welcome email dispatched to user: {$user->email}");
+        return Command::SUCCESS;
     }
 }

@@ -141,6 +141,26 @@ Content-Type: application/json
 }
 ```
 
+## Email Queue
+Emails are sent asynchronously via Laravel queues. Ensure the queue worker is running:
+```bash
+php artisan queue:work
+```
+
+## Manually dispatch email command
+In this project I included manual artisan command to send email for your user using this command:
+```bash
+php artisan email:send-welcome <user_id>
+```
+For example
+```bash
+php artisan email:send-welcome 13
+```
+This Command wil return:
+```bash
+Welcome email dispatched to user: your_targeted_user_email@example.com
+```
+
 ## Background Jobs
 ## Weather Updates
 Set up the Laravel scheduler to run the weather update job every 15 minutes:
@@ -152,12 +172,6 @@ Set up the Laravel scheduler to run the weather update job every 15 minutes:
 2. Start scheduler:
 ```bash
 php artisan schedule:work
-```
-
-## Email Queue
-Emails are sent asynchronously via Laravel queues. Ensure the queue worker is running:
-```bash
-php artisan queue:work
 ```
 
 ### Testing
