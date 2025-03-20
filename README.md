@@ -168,7 +168,7 @@ php artisan ApiEndpointsTest
 ```
 
 ## ADDITIONAL SETTING
-In your [phpunit.xml] file change the following setting to make test run well:
+In your `phpunit.xml` file change the following setting to make test run well:
 ```bash
 <env name="DB_CONNECTION" value="mysql"/>
 <env name="DB_DATABASE" value="YourDatabaseName"/>
