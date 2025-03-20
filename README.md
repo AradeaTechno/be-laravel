@@ -26,6 +26,9 @@ This project is base structure to create a backend using laravel. This project a
 
 --- 
 
+## Accessibility
+Except `REGISTER` and `LOGIN`, all endpoints need `BEARER TOKEN AUTHORIZATION` or will return `401`. Use Bearer token you will get from `/login` endpoint.
+
 ## Requirements
 Ensure your system meets the following requirements:
 - PHP >= 8.3
