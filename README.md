@@ -120,7 +120,7 @@ php artisan serve
 Visit the application in your browser at http://127.0.0.1:8000
 
 ## ALTERNATIVE TESTING
-You can use postman to test all endpoinst contains in this project. I also include [Postman_collection.json] and you can import into your postman app. 
+You can use postman to test all endpoinst contains in this project. I also include `JuiceBoxApi.postman_collection.json` and you can import into your postman app. Import the collection into your postman and it ready to be used. 
 
 ## Test Weather Service API
 Use the endpoint /api/weather to fetch current weather data for a default or specified location (By default is set to Perth):
