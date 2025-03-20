@@ -174,7 +174,7 @@ Set up the Laravel scheduler to run the weather update job every 15 minutes:
 php artisan schedule:work
 ```
 
-### Testing
+## Testing
 Run Unit and Feature Tests
 Ensure all tests pass:
 
