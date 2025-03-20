@@ -163,8 +163,15 @@ php artisan queue:work
 ### Testing
 Run Unit and Feature Tests
 Ensure all tests pass:
+
+To run all tests at once;
 ```bash
-php artisan ApiEndpointsTest
+php artisan --filter=ApiEndpointsTest
+```
+
+To run test by name `e.g`:
+```bash
+php artisan test --filter=ApiEndpointsTest::test_can_get_all_post
 ```
 
 ## ADDITIONAL SETTING
