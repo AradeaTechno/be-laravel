@@ -163,3 +163,10 @@ Ensure all tests pass:
 ```bash
 php artisan ApiEndpointsTest
 ```
+
+## ADDITIONAL SETTING
+In your [phpunit.xml] file change the following setting:
+```bash
+<env name="DB_CONNECTION" value="mysql"/>
+<env name="DB_DATABASE" value="YourDatabaseName"/>
+```
