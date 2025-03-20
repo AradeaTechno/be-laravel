@@ -83,10 +83,10 @@ CACHE_DRIVER=file
 QUEUE_CONNECTION=database
 
 MAIL_MAILER=smtp
-MAIL_HOST=smtp.mailtrap.io
+MAIL_HOST=your.smtp.host
 MAIL_PORT=2525
-MAIL_USERNAME=your_mailtrap_username
-MAIL_PASSWORD=your_mailtrap_password
+MAIL_USERNAME=your_smtp_username
+MAIL_PASSWORD=your_smtp_password
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=your_email@example.com
 MAIL_FROM_NAME="${APP_NAME}"
