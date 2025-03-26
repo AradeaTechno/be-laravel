@@ -213,7 +213,7 @@ Set up the Laravel scheduler to run the weather update job every 15 minutes:
 
 1. Add the following cron job:
 ```bash
-* * * * * php /path-to-your-project/artisan schedule:run >> /dev/null 2>&1
+*/15 * * * * php /path-to-your-project/artisan schedule:run >> /dev/null 2>&1
 ```
 2. Start scheduler:
 ```bash
